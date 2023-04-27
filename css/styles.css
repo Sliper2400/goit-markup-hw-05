@@ -152,11 +152,12 @@ a {
     transition-timing-function: var(--cubic);
 }
 
-.menu-link:hover {
+.menu-link:hover,
+.menu-link:focus {
     color: var(--purple-color);
 }
 
-.menu-link:focus {
+.menu-link:active {
     color: var(--purple-color);
 }
 
@@ -172,6 +173,10 @@ a {
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: var(--cubic);
+}
+
+.menu-link.current {
+    color: var(--purple-color);
 }
 
 .menu-link.current::after,
@@ -253,7 +258,6 @@ a {
     padding: 16px 32px;
     display: block;
     margin: 0 auto;
-    gap: 10px;
     border-radius: 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     min-width: 169px;
@@ -265,18 +269,12 @@ a {
 }
 
 .hero-button:hover,
-.hero-button:focus {
+.hero-button:focus,
+.hero-button:active {
     background-color: var(--purple-color);
 }
 
-.hero-button:active {
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.18;
-    color: var(--white-color);
-    background-color: var(--purple-color);
-}
+
 
 .features {
     padding: 120px 0;
@@ -788,7 +786,7 @@ a {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
-    transition: transform 400ms ease-in 200ms, opacity 400ms ease-in 200ms;
+    transition: transform 400ms var(--cubic) 200ms, opacity 400ms var(--cubic) 200ms;
 }
 
 .backdrop.is-hidden .modal {
@@ -812,7 +810,7 @@ a {
     /* color: var(--grey-color); */
     cursor: pointer;
     border-radius: 50%;
-    transition-property: border, color, box-shadow, background-color;
+    transition-property: color, background-color;
     transition-duration: 250ms;
     transition-timing-function: var(--cubic);
 }
